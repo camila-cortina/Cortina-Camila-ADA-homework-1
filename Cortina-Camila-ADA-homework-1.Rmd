@@ -1,0 +1,54 @@
+---
+title: "Cortina-Camila-ADA-homework-1"
+author: "Camila Cortina"
+date: "2/4/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+##Challenge 1
+```{r}
+quote<- as.vector("There grandeur in this view of life, with its several powers, having been originally breathed by the Creator into a few forms or into one; and that, whilst this planet has gone circling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being evolved")
+quote<- gsub("[[:punct:]]","", quote)
+
+split_quote<- str_split(quote, " ")
+split_quote<- split_quote[[1]]
+split_quote
+
+every_fourth<- split_quote[seq(from = 1, to = length(split_quote), by = 4)]
+every_fourth
+
+every_fourth<- sort(every_fourth, decreasing = TRUE)
+every_fourth
+```
+
+##Challenge 2
+```{r}
+m1<- matrix(data = seq(from = 1, to = 159, by = 2), nrow = 8, ncol = 10, byrow = FALSE)
+m1
+
+m1[5,2]
+
+m1[5:7,]
+
+m2<- m1[3:6, 4:9]
+m2
+
+class(m2) #The class of m2 is a matrix
+mode(m2) #The mode of m2 is numeric 
+```
+
+##Challenge 3
+```{r}
+a<- array(data = 400:1, dim = c(5, 5, 4, 4))
+a
+
+a[1,1,1,2] #Returns a single number within the array
+a[2,3,2,] #Returns all of the numbers found at the second row third column of the second matrix within each array
+a[1:5, 1:5, 3, 3] #Returns the third matrix in the third array
+```
+
+##Challenge 4
+```{r}
+
+```
