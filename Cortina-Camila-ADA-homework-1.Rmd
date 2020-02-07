@@ -82,6 +82,7 @@ Order_Primates<- list(Suborder_Strepsirhini, Suborder_Haplorhini)
 names(Order_Primates)<- c("Suborder_Strepsirhini", "Suborder_Haplorhini")
 
 nwm<- Order_Primates[["Suborder_Haplorhini"]][["Infraorder_Simiiformes"]][["Pavorder_Platyrrhini"]]
+nwm
 class(nwm) #It is a list
 mode(nwm) #The mode is also a list
 

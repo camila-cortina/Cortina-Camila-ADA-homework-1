@@ -440,7 +440,10 @@ Order_Primates&lt;- list(Suborder_Strepsirhini, Suborder_Haplorhini)
 names(Order_Primates)&lt;- c(&quot;Suborder_Strepsirhini&quot;, &quot;Suborder_Haplorhini&quot;)
 
 nwm&lt;- Order_Primates[[&quot;Suborder_Haplorhini&quot;]][[&quot;Infraorder_Simiiformes&quot;]][[&quot;Pavorder_Platyrrhini&quot;]]
-class(nwm) #It is a list</code></pre>
+nwm</code></pre>
+<pre><code>## $Superfamily_Ceboidea
+## [1] &quot;Cebidae&quot;     &quot;Atelidae&quot;    &quot;Pitheciidae&quot;</code></pre>
+<pre class="r"><code>class(nwm) #It is a list</code></pre>
 <pre><code>## [1] &quot;list&quot;</code></pre>
 <pre class="r"><code>mode(nwm) #The mode is also a list</code></pre>
 <pre><code>## [1] &quot;list&quot;</code></pre>
