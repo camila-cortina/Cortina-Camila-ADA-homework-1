@@ -8,6 +8,7 @@ editor_options:
 ---
 ##Challenge 1
 ```{r}
+library(stringr)
 quote<- as.vector("There grandeur in this view of life, with its several powers, having been originally breathed by the Creator into a few forms or into one; and that, whilst this planet has gone circling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being evolved")
 quote<- gsub("[[:punct:]]","", quote)
 
@@ -50,5 +51,39 @@ a[1:5, 1:5, 3, 3] #Returns the third matrix in the third array
 
 ##Challenge 4
 ```{r}
+#Superfamilies
+Superfamily_Lorisodae<- c("Lorisidae", "Galagidae")
+Superfamily_Lemuroidea<- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae", "Daubentoniidae")
+Superfamily_Tarsioidea<- c("Tarsiidae")
+Superfamily_Ceboidea<- c("Cebidae", "Atelidae", "Pitheciidae")
+Superfamily_Hominoidea<- c("Hylobatidae", "Hominidae")
+Superfamily_Cercopithecoidea<- c("Cercopithecidae")
+#Pavorders
+Pavorder_Platyrrhini<- list(Superfamily_Ceboidea)
+names(Pavorder_Platyrrhini)<- c("Superfamily_Ceboidea")
+Pavorder_Catarrhini<- list(Superfamily_Hominoidea, Superfamily_Cercopithecoidea)
+names(Pavorder_Catarrhini)<- c("Superfamily_Hominoidea", "Superfamily_Cercopithecoidea")
+#Infraorders
+Infraorder_Lemuriformes<- list(Superfamily_Lemuroidea)
+names(Infraorder_Lemuriformes)<- c("Superfamily_Lemuroidea")
+Infraorder_Lorisiformes<- list(Superfamily_Lorisodae)
+names(Infraorder_Lorisiformes)<- c("Superfamily_Lorisodae")
+Infraorder_Tarsiiformes<- list(Superfamily_Tarsioidea)
+names(Infraorder_Tarsiiformes)<- c("Superfamily_Tarsioidea")
+Infraorder_Simiiformes<- list(Pavorder_Platyrrhini, Pavorder_Catarrhini)
+names(Infraorder_Simiiformes)<- c("Pavorder_Platyrrhini", "Pavorder_Catarrhini")
+#Suborders
+Suborder_Strepsirhini<- list(Infraorder_Lorisiformes, Infraorder_Lemuriformes)
+names(Suborder_Strepsirhini)<- c("Infraorder_Lorisiformes", "Infraorder_Lemuriformes")
+Suborder_Haplorhini<- list(Infraorder_Tarsiiformes, Infraorder_Simiiformes)
+names(Suborder_Haplorhini)<- c("Infraorder_Tarsiiformes", "Infraorder_Simiiformes")
+#Order
+Order_Primates<- list(Suborder_Strepsirhini, Suborder_Haplorhini)
+names(Order_Primates)<- c("Suborder_Strepsirhini", "Suborder_Haplorhini")
 
+nwm<- Order_Primates[["Suborder_Haplorhini"]][["Infraorder_Simiiformes"]][["Pavorder_Platyrrhini"]]
+class(nwm) #It is a list
+mode(nwm) #The mode is also a list
+
+Order_Primates$Suborder_Haplorhini$Infraorder_Tarsiiformes$Superfamily_Tarsioidea
 ```
